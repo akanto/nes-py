@@ -57,12 +57,12 @@ class ROM(object):
     @property
     def prg_rom_size(self):
         """Return the size of the PRG ROM in KB."""
-        return 16 * self.header[4]
+        return 16 * np.uint32(self.header[4])
 
     @property
     def chr_rom_size(self):
         """Return the size of the CHR ROM in KB."""
-        return 8 * self.header[5]
+        return 8 * np.uint32(self.header[5])
 
     @property
     def flags_6(self):
